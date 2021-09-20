@@ -1,0 +1,15 @@
+
+.country img{
+    width: 200px;
+    height: 180px;
+}
+
+.country{
+    height: 350px;
+    background-color: bisque;
+    color: green;
+    margin: 25px;
+    border: 2px solid red;
+    border-radius: 15px;
+    padding: 20px;
+}

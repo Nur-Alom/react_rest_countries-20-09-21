@@ -1,0 +1,31 @@
+import React, { useEffect, useState } from 'react';
+import Country from '../Country/Country';
+import './Countries.css';
+
+
+const Countries = () => {
+    const [Countries, setCountry] = useState([])
+    // console.log(Countries)
+
+    useEffect(() => {
+        fetch('https://restcountries.eu/rest/v2/all')
+            .then(res => res.json())
+            .then(data => setCountry(data))
+    }, []);
+
+    return (
+        <div>
+            <h1>This is my Countries!!! {Countries.length}</h1>
+            <div className='countries'>
+                {
+                    Countries.map(country => <Country
+                        key={country.alpha2Code}
+                        country={country}
+                    >
+                    </Country>)
+                }
+            </div>
+        </div>
+    )
+}
+export default Countries;
